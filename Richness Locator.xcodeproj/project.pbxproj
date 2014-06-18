@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		08E7101719512D9C00269B22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E7101619512D9C00269B22 /* Foundation.framework */; };
+		08E7101919512D9C00269B22 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E7101819512D9C00269B22 /* CoreGraphics.framework */; };
+		08E7101B19512D9C00269B22 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E7101A19512D9C00269B22 /* UIKit.framework */; };
+		08E7102119512D9C00269B22 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08E7101F19512D9C00269B22 /* InfoPlist.strings */; };
+		08E7102319512D9C00269B22 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E7102219512D9C00269B22 /* main.m */; };
+		08E7102719512D9C00269B22 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E7102619512D9C00269B22 /* AppDelegate.m */; };
+		08E7102A19512D9C00269B22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08E7102819512D9C00269B22 /* Main.storyboard */; };
+		08E7102D19512D9C00269B22 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E7102C19512D9C00269B22 /* ViewController.m */; };
+		08E7102F19512D9C00269B22 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08E7102E19512D9C00269B22 /* Images.xcassets */; };
+		08E7103619512D9C00269B22 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E7103519512D9C00269B22 /* XCTest.framework */; };
+		08E7103719512D9C00269B22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E7101619512D9C00269B22 /* Foundation.framework */; };
+		08E7103819512D9C00269B22 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E7101A19512D9C00269B22 /* UIKit.framework */; };
+		08E7104019512D9C00269B22 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08E7103E19512D9C00269B22 /* InfoPlist.strings */; };
+		08E7104219512D9C00269B22 /* Richness_LocatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E7104119512D9C00269B22 /* Richness_LocatorTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		08E7103919512D9C00269B22 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08E7100B19512D9C00269B22 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 08E7101219512D9C00269B22;
+			remoteInfo = "Richness Locator";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		08E7101319512D9C00269B22 /* Richness Locator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Richness Locator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		08E7101619512D9C00269B22 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		08E7101819512D9C00269B22 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		08E7101A19512D9C00269B22 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		08E7101E19512D9C00269B22 /* Richness Locator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Richness Locator-Info.plist"; sourceTree = "<group>"; };
+		08E7102019512D9C00269B22 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		08E7102219512D9C00269B22 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		08E7102419512D9C00269B22 /* Richness Locator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Richness Locator-Prefix.pch"; sourceTree = "<group>"; };
+		08E7102519512D9C00269B22 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		08E7102619512D9C00269B22 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		08E7102919512D9C00269B22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		08E7102B19512D9C00269B22 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		08E7102C19512D9C00269B22 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		08E7102E19512D9C00269B22 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		08E7103419512D9C00269B22 /* Richness LocatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Richness LocatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		08E7103519512D9C00269B22 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		08E7103D19512D9C00269B22 /* Richness LocatorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Richness LocatorTests-Info.plist"; sourceTree = "<group>"; };
+		08E7103F19512D9C00269B22 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		08E7104119512D9C00269B22 /* Richness_LocatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Richness_LocatorTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		08E7101019512D9C00269B22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08E7101919512D9C00269B22 /* CoreGraphics.framework in Frameworks */,
+				08E7101B19512D9C00269B22 /* UIKit.framework in Frameworks */,
+				08E7101719512D9C00269B22 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08E7103119512D9C00269B22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08E7103619512D9C00269B22 /* XCTest.framework in Frameworks */,
+				08E7103819512D9C00269B22 /* UIKit.framework in Frameworks */,
+				08E7103719512D9C00269B22 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08E7100A19512D9C00269B22 = {
+			isa = PBXGroup;
+			children = (
+				08E7101C19512D9C00269B22 /* Richness Locator */,
+				08E7103B19512D9C00269B22 /* Richness LocatorTests */,
+				08E7101519512D9C00269B22 /* Frameworks */,
+				08E7101419512D9C00269B22 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		08E7101419512D9C00269B22 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				08E7101319512D9C00269B22 /* Richness Locator.app */,
+				08E7103419512D9C00269B22 /* Richness LocatorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		08E7101519512D9C00269B22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				08E7101619512D9C00269B22 /* Foundation.framework */,
+				08E7101819512D9C00269B22 /* CoreGraphics.framework */,
+				08E7101A19512D9C00269B22 /* UIKit.framework */,
+				08E7103519512D9C00269B22 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		08E7101C19512D9C00269B22 /* Richness Locator */ = {
+			isa = PBXGroup;
+			children = (
+				08E7102519512D9C00269B22 /* AppDelegate.h */,
+				08E7102619512D9C00269B22 /* AppDelegate.m */,
+				08E7102819512D9C00269B22 /* Main.storyboard */,
+				08E7102B19512D9C00269B22 /* ViewController.h */,
+				08E7102C19512D9C00269B22 /* ViewController.m */,
+				08E7102E19512D9C00269B22 /* Images.xcassets */,
+				08E7101D19512D9C00269B22 /* Supporting Files */,
+			);
+			path = "Richness Locator";
+			sourceTree = "<group>";
+		};
+		08E7101D19512D9C00269B22 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				08E7101E19512D9C00269B22 /* Richness Locator-Info.plist */,
+				08E7101F19512D9C00269B22 /* InfoPlist.strings */,
+				08E7102219512D9C00269B22 /* main.m */,
+				08E7102419512D9C00269B22 /* Richness Locator-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		08E7103B19512D9C00269B22 /* Richness LocatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				08E7104119512D9C00269B22 /* Richness_LocatorTests.m */,
+				08E7103C19512D9C00269B22 /* Supporting Files */,
+			);
+			path = "Richness LocatorTests";
+			sourceTree = "<group>";
+		};
+		08E7103C19512D9C00269B22 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				08E7103D19512D9C00269B22 /* Richness LocatorTests-Info.plist */,
+				08E7103E19512D9C00269B22 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		08E7101219512D9C00269B22 /* Richness Locator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08E7104519512D9C00269B22 /* Build configuration list for PBXNativeTarget "Richness Locator" */;
+			buildPhases = (
+				08E7100F19512D9C00269B22 /* Sources */,
+				08E7101019512D9C00269B22 /* Frameworks */,
+				08E7101119512D9C00269B22 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Richness Locator";
+			productName = "Richness Locator";
+			productReference = 08E7101319512D9C00269B22 /* Richness Locator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		08E7103319512D9C00269B22 /* Richness LocatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08E7104819512D9C00269B22 /* Build configuration list for PBXNativeTarget "Richness LocatorTests" */;
+			buildPhases = (
+				08E7103019512D9C00269B22 /* Sources */,
+				08E7103119512D9C00269B22 /* Frameworks */,
+				08E7103219512D9C00269B22 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				08E7103A19512D9C00269B22 /* PBXTargetDependency */,
+			);
+			name = "Richness LocatorTests";
+			productName = "Richness LocatorTests";
+			productReference = 08E7103419512D9C00269B22 /* Richness LocatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08E7100B19512D9C00269B22 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "___FULLUSERNAME___";
+				TargetAttributes = {
+					08E7103319512D9C00269B22 = {
+						TestTargetID = 08E7101219512D9C00269B22;
+					};
+				};
+			};
+			buildConfigurationList = 08E7100E19512D9C00269B22 /* Build configuration list for PBXProject "Richness Locator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 08E7100A19512D9C00269B22;
+			productRefGroup = 08E7101419512D9C00269B22 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				08E7101219512D9C00269B22 /* Richness Locator */,
+				08E7103319512D9C00269B22 /* Richness LocatorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		08E7101119512D9C00269B22 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08E7102F19512D9C00269B22 /* Images.xcassets in Resources */,
+				08E7102119512D9C00269B22 /* InfoPlist.strings in Resources */,
+				08E7102A19512D9C00269B22 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08E7103219512D9C00269B22 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08E7104019512D9C00269B22 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		08E7100F19512D9C00269B22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08E7102D19512D9C00269B22 /* ViewController.m in Sources */,
+				08E7102719512D9C00269B22 /* AppDelegate.m in Sources */,
+				08E7102319512D9C00269B22 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08E7103019512D9C00269B22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08E7104219512D9C00269B22 /* Richness_LocatorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		08E7103A19512D9C00269B22 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 08E7101219512D9C00269B22 /* Richness Locator */;
+			targetProxy = 08E7103919512D9C00269B22 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		08E7101F19512D9C00269B22 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				08E7102019512D9C00269B22 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		08E7102819512D9C00269B22 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				08E7102919512D9C00269B22 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		08E7103E19512D9C00269B22 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				08E7103F19512D9C00269B22 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		08E7104319512D9C00269B22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		08E7104419512D9C00269B22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		08E7104619512D9C00269B22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Richness Locator/Richness Locator-Prefix.pch";
+				INFOPLIST_FILE = "Richness Locator/Richness Locator-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		08E7104719512D9C00269B22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Richness Locator/Richness Locator-Prefix.pch";
+				INFOPLIST_FILE = "Richness Locator/Richness Locator-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		08E7104919512D9C00269B22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Richness Locator.app/Richness Locator";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Richness Locator/Richness Locator-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Richness LocatorTests/Richness LocatorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		08E7104A19512D9C00269B22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Richness Locator.app/Richness Locator";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Richness Locator/Richness Locator-Prefix.pch";
+				INFOPLIST_FILE = "Richness LocatorTests/Richness LocatorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		08E7100E19512D9C00269B22 /* Build configuration list for PBXProject "Richness Locator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08E7104319512D9C00269B22 /* Debug */,
+				08E7104419512D9C00269B22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		08E7104519512D9C00269B22 /* Build configuration list for PBXNativeTarget "Richness Locator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08E7104619512D9C00269B22 /* Debug */,
+				08E7104719512D9C00269B22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		08E7104819512D9C00269B22 /* Build configuration list for PBXNativeTarget "Richness LocatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08E7104919512D9C00269B22 /* Debug */,
+				08E7104A19512D9C00269B22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08E7100B19512D9C00269B22 /* Project object */;
+}
