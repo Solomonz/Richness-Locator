@@ -133,6 +133,11 @@
     
     CLLocation *origin = [[CLLocation alloc] initWithLatitude:usersLocation.latitude longitude:usersLocation.longitude];
     
+    self.GH = [[GenerationHelper alloc] init];
+    
+    if(self.GH)
+        NSLog(@"hello");
+    
     self.Destinationeth = [self.GH GeneratethRichness:origin atRadius:200];
     
     alreadyGotDestination = YES;
