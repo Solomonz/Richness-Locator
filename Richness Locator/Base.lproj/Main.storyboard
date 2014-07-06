@@ -1,25 +1,157 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ib6-Ck-pfj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--Navigation Controller-->
+        <scene sceneID="SLp-a0-mkB">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="ib6-Ck-pfj" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cUW-D2-GmY">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="NfB-xZ-yHe" kind="relationship" relationship="rootViewController" id="x6U-lr-cLD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K0n-ur-GKw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-634" y="109"/>
+        </scene>
+        <!--View Controller - Thou Must Chooseth-->
+        <scene sceneID="Szn-sR-tOO">
+            <objects>
+                <viewController id="NfB-xZ-yHe" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="3tF-CP-1Ma"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Xa-TF-2Mq"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" contentMode="scaleToFill" id="Rbc-8L-sHR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bf6-ce-tqH">
+                                <rect key="frame" x="80" y="76" width="160" height="189"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Find the Richness">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="GXq-Ea-tQ9" kind="push" id="clR-jw-NB1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUy-PD-clw">
+                                <rect key="frame" x="63" y="311" width="194" height="209"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Remain Eternally Pauperous">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="7ou-ZI-u7J" kind="push" id="0hf-Yd-HTj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.78396739130434789" green="0.064536398727509409" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="0.088788280625900939" blue="0.32789348906708748" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="7Xa-TF-2Mq" firstAttribute="top" secondItem="TUy-PD-clw" secondAttribute="bottom" constant="20" id="t9j-cI-f4c"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Thou Must Chooseth" id="3FM-dX-sAu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Esg-gv-HsG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-144" y="109"/>
+        </scene>
+        <!--View ControllerM - Thou Mighteth Beëth Moneyful-->
+        <scene sceneID="GMc-IF-epe">
+            <objects>
+                <viewController id="GXq-Ea-tQ9" customClass="ViewControllerM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yKK-c1-cr2"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bfy-DK-veA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yNT-lM-ObK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="268" translatesAutoresizingMaskIntoConstraints="NO" id="Ox1-HZ-UcJ">
+                                <rect key="frame" x="20" y="63" width="268" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Thy Fortune Layeth Hereth">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CaS-zd-OWl">
+                                <rect key="frame" x="40" y="185" width="240" height="305"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="5ch-rE-RgR">
+                                <rect key="frame" x="-39" y="128" width="399" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Revealeth How Lengthiëth Thy Journie Ith "/>
+                                <connections>
+                                    <action selector="Generateth:" destination="GXq-Ea-tQ9" eventType="touchUpInside" id="Qgi-gG-gRo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUj-wk-bLB">
+                                <rect key="frame" x="0.0" y="498" width="320" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Revealeth">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Revealeth:" destination="GXq-Ea-tQ9" eventType="touchUpInside" id="CGD-Nb-mKc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CaS-zd-OWl" firstAttribute="top" secondItem="yKK-c1-cr2" secondAttribute="bottom" constant="121" id="XDv-t9-NJG"/>
+                            <constraint firstItem="Bfy-DK-veA" firstAttribute="top" secondItem="fUj-wk-bLB" secondAttribute="bottom" constant="12" id="pEK-8s-sKp"/>
+                            <constraint firstItem="Bfy-DK-veA" firstAttribute="top" secondItem="CaS-zd-OWl" secondAttribute="bottom" constant="78" id="swc-py-Nbd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Thou Mighteth Beëth Moneyful" id="xxJ-9y-85O"/>
+                    <connections>
+                        <outlet property="Generateth" destination="5ch-rE-RgR" id="g5k-3D-8Fo"/>
+                        <outlet property="Informationeth" destination="Ox1-HZ-UcJ" id="ezb-tQ-XIi"/>
+                        <outlet property="map" destination="CaS-zd-OWl" id="Wri-2a-8dG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RD2-eL-VSv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="390" y="-209"/>
+        </scene>
+        <!--View Controller - Thy Essence is Poorness-->
+        <scene sceneID="7Lv-4J-Zbx">
+            <objects>
+                <viewController id="7ou-ZI-u7J" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pC9-fg-99h"/>
+                        <viewControllerLayoutGuide type="bottom" id="cB9-i0-la1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jOW-Fu-Qsr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Thy Essence is Poorness" id="0NN-jG-JHO"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="grW-52-Lyf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="390" y="620"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

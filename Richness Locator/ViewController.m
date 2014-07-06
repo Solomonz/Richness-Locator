@@ -14,6 +14,8 @@
 
 @implementation ViewController
 
+//@synthesize vcm;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -24,6 +26,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSLog(@"Prepping for segue...");
 }
 
 @end

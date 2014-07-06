@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0705FC3219515C5800534CBE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0705FC3119515C5800534CBE /* CoreLocation.framework */; };
+		07A3F28C1951F48D00ED6B52 /* ViewControllerM.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A3F28B1951F48D00ED6B52 /* ViewControllerM.m */; };
 		08E7101719512D9C00269B22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E7101619512D9C00269B22 /* Foundation.framework */; };
 		08E7101919512D9C00269B22 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E7101819512D9C00269B22 /* CoreGraphics.framework */; };
 		08E7101B19512D9C00269B22 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E7101A19512D9C00269B22 /* UIKit.framework */; };
@@ -21,6 +23,7 @@
 		08E7103819512D9C00269B22 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E7101A19512D9C00269B22 /* UIKit.framework */; };
 		08E7104019512D9C00269B22 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08E7103E19512D9C00269B22 /* InfoPlist.strings */; };
 		08E7104219512D9C00269B22 /* Richness_LocatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E7104119512D9C00269B22 /* Richness_LocatorTests.m */; };
+		08E7104F1951373000269B22 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E7104E1951373000269B22 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0705FC3119515C5800534CBE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		07A3F28A1951F48D00ED6B52 /* ViewControllerM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerM.h; sourceTree = "<group>"; };
+		07A3F28B1951F48D00ED6B52 /* ViewControllerM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerM.m; sourceTree = "<group>"; };
 		08E7101319512D9C00269B22 /* Richness Locator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Richness Locator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08E7101619512D9C00269B22 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		08E7101819512D9C00269B22 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +59,7 @@
 		08E7103D19512D9C00269B22 /* Richness LocatorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Richness LocatorTests-Info.plist"; sourceTree = "<group>"; };
 		08E7103F19512D9C00269B22 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		08E7104119512D9C00269B22 /* Richness_LocatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Richness_LocatorTests.m; sourceTree = "<group>"; };
+		08E7104E1951373000269B22 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0705FC3219515C5800534CBE /* CoreLocation.framework in Frameworks */,
+				08E7104F1951373000269B22 /* MapKit.framework in Frameworks */,
 				08E7101919512D9C00269B22 /* CoreGraphics.framework in Frameworks */,
 				08E7101B19512D9C00269B22 /* UIKit.framework in Frameworks */,
 				08E7101719512D9C00269B22 /* Foundation.framework in Frameworks */,
@@ -101,6 +110,8 @@
 		08E7101519512D9C00269B22 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0705FC3119515C5800534CBE /* CoreLocation.framework */,
+				08E7104E1951373000269B22 /* MapKit.framework */,
 				08E7101619512D9C00269B22 /* Foundation.framework */,
 				08E7101819512D9C00269B22 /* CoreGraphics.framework */,
 				08E7101A19512D9C00269B22 /* UIKit.framework */,
@@ -117,6 +128,8 @@
 				08E7102819512D9C00269B22 /* Main.storyboard */,
 				08E7102B19512D9C00269B22 /* ViewController.h */,
 				08E7102C19512D9C00269B22 /* ViewController.m */,
+				07A3F28A1951F48D00ED6B52 /* ViewControllerM.h */,
+				07A3F28B1951F48D00ED6B52 /* ViewControllerM.m */,
 				08E7102E19512D9C00269B22 /* Images.xcassets */,
 				08E7101D19512D9C00269B22 /* Supporting Files */,
 			);
@@ -199,6 +212,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "___FULLUSERNAME___";
 				TargetAttributes = {
+					08E7101219512D9C00269B22 = {
+						DevelopmentTeam = 37YUZZA4VL;
+					};
 					08E7103319512D9C00269B22 = {
 						TestTargetID = 08E7101219512D9C00269B22;
 					};
@@ -250,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08E7102D19512D9C00269B22 /* ViewController.m in Sources */,
+				07A3F28C1951F48D00ED6B52 /* ViewControllerM.m in Sources */,
 				08E7102719512D9C00269B22 /* AppDelegate.m in Sources */,
 				08E7102319512D9C00269B22 /* main.m in Sources */,
 			);
@@ -376,10 +393,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Richness Locator/Richness Locator-Prefix.pch";
 				INFOPLIST_FILE = "Richness Locator/Richness Locator-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -389,10 +409,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Richness Locator/Richness Locator-Prefix.pch";
 				INFOPLIST_FILE = "Richness Locator/Richness Locator-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -456,6 +479,7 @@
 				08E7104719512D9C00269B22 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		08E7104819512D9C00269B22 /* Build configuration list for PBXNativeTarget "Richness LocatorTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +488,7 @@
 				08E7104A19512D9C00269B22 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

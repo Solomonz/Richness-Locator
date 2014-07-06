@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
+
+//#import "ViewControllerMoneyed.h"
 
 @interface ViewController : UIViewController
+
+//@property (strong, nonatomic) ViewControllerMoneyed * vcm;
 
 @end
