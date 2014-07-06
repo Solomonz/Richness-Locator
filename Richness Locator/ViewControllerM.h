@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "GenerationHelper.h"
 
 @interface ViewControllerM : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>
 
@@ -21,6 +22,7 @@
 @property (assign, nonatomic) CLLocationCoordinate2D usersLocation;
 @property (assign, nonatomic) double prevDist;
 @property (strong, nonatomic) CLLocation * Destinationeth;
+@property (strong, nonatomic) GenerationHelper * GH;
 
 - (IBAction)Generateth:(id)sender;
 - (IBAction)Revealeth:(id)sender;

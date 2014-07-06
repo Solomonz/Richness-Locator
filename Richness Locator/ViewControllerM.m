@@ -7,6 +7,7 @@
 //
 
 #import "ViewControllerM.h"
+#import "GenerationHelper.h"
 
 @interface ViewControllerM ()
 
@@ -14,7 +15,7 @@
 
 @implementation ViewControllerM
 
-@synthesize map, locationManager, alreadyGotUserLocation, alreadyGotDestination, Generateth, Informationeth, usersLocation, prevDist, Destinationeth;
+@synthesize map, locationManager, alreadyGotUserLocation, alreadyGotDestination, Generateth, Informationeth, usersLocation, prevDist, Destinationeth, GH;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -129,12 +130,12 @@
 - (IBAction)Generateth:(id)sender
 {
     Informationeth.text = @"GOETH FORTHETH AND FIND THY FORTUNETH";
-    double latitude = (arc4random_uniform(360000) - 180000.0);
-    self.Destinationeth = [[CLLocation alloc] initWithLatitude:usersLocation.latitude + latitude / 100000000 longitude:usersLocation.longitude + (arc4random_uniform(2 * sqrt(32400000000 - latitude * latitude)) - sqrt(32400000000 - latitude * latitude)) / 100000000];
-    //NSLog(@"Latitude: %+.10f and Longitude: %+.10f", Destinationeth.coordinate.latitude, Destinationeth.coordinate.longitude);
-    alreadyGotDestination = YES;
     
     CLLocation *origin = [[CLLocation alloc] initWithLatitude:usersLocation.latitude longitude:usersLocation.longitude];
+    
+    self.Destinationeth = [self.GH GeneratethRichness:origin atRadius:200];
+    
+    alreadyGotDestination = YES;
     
     self.prevDist = ((double) ((int) ([self.Destinationeth distanceFromLocation:origin] * 2))) / 2;
     [self.map removeAnnotations:self.map.annotations];
