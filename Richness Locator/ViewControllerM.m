@@ -134,8 +134,6 @@
     //NSLog(@"Latitude: %+.10f and Longitude: %+.10f", Destinationeth.coordinate.latitude, Destinationeth.coordinate.longitude);
     alreadyGotDestination = YES;
     
-    
-    
     CLLocation *origin = [[CLLocation alloc] initWithLatitude:usersLocation.latitude longitude:usersLocation.longitude];
     
     self.prevDist = ((double) ((int) ([self.Destinationeth distanceFromLocation:origin] * 2))) / 2;
