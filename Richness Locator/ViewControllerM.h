@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "GenerationHelper.h"
+#import "UserData.h"
 
 @interface ViewControllerM : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>
 
@@ -23,8 +24,14 @@
 @property (assign, nonatomic) double prevDist;
 @property (strong, nonatomic) CLLocation * Destinationeth;
 @property (strong, nonatomic) GenerationHelper * GH;
+@property (strong, nonatomic) UserData * UD;
+@property (assign, nonatomic) double time;
+@property (assign, nonatomic) int distance;
+@property (strong, nonatomic) NSTimer * timer;
+@property (assign, nonatomic) BOOL outOfTime;
 
 - (IBAction)Generateth:(id)sender;
 - (IBAction)Revealeth:(id)sender;
+- (void)ReachedDestination:(double)timeLeft;
 
 @end

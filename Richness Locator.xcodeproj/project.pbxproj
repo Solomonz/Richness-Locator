@@ -10,6 +10,7 @@
 		0705FC3219515C5800534CBE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0705FC3119515C5800534CBE /* CoreLocation.framework */; };
 		07A3F28C1951F48D00ED6B52 /* ViewControllerM.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A3F28B1951F48D00ED6B52 /* ViewControllerM.m */; };
 		085992401969B15D00403E85 /* GenerationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0859923F1969B15D00403E85 /* GenerationHelper.m */; };
+		08599243196CD50000403E85 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 08599242196CD50000403E85 /* UserData.m */; };
 		08E7101719512D9C00269B22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E7101619512D9C00269B22 /* Foundation.framework */; };
 		08E7101919512D9C00269B22 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E7101819512D9C00269B22 /* CoreGraphics.framework */; };
 		08E7101B19512D9C00269B22 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E7101A19512D9C00269B22 /* UIKit.framework */; };
@@ -43,6 +44,8 @@
 		07A3F28B1951F48D00ED6B52 /* ViewControllerM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerM.m; sourceTree = "<group>"; };
 		0859923E1969B15D00403E85 /* GenerationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenerationHelper.h; sourceTree = "<group>"; };
 		0859923F1969B15D00403E85 /* GenerationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenerationHelper.m; sourceTree = "<group>"; };
+		08599241196CD50000403E85 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
+		08599242196CD50000403E85 /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
 		08E7101319512D9C00269B22 /* Richness Locator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Richness Locator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08E7101619512D9C00269B22 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		08E7101819512D9C00269B22 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -131,6 +134,8 @@
 				08E7102819512D9C00269B22 /* Main.storyboard */,
 				08E7102B19512D9C00269B22 /* ViewController.h */,
 				08E7102C19512D9C00269B22 /* ViewController.m */,
+				08599241196CD50000403E85 /* UserData.h */,
+				08599242196CD50000403E85 /* UserData.m */,
 				07A3F28A1951F48D00ED6B52 /* ViewControllerM.h */,
 				07A3F28B1951F48D00ED6B52 /* ViewControllerM.m */,
 				0859923E1969B15D00403E85 /* GenerationHelper.h */,
@@ -274,6 +279,7 @@
 				07A3F28C1951F48D00ED6B52 /* ViewControllerM.m in Sources */,
 				08E7102719512D9C00269B22 /* AppDelegate.m in Sources */,
 				08E7102319512D9C00269B22 /* main.m in Sources */,
+				08599243196CD50000403E85 /* UserData.m in Sources */,
 				085992401969B15D00403E85 /* GenerationHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

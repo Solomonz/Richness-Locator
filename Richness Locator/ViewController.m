@@ -14,12 +14,30 @@
 
 @implementation ViewController
 
-//@synthesize vcm;
+@synthesize UD, VCM;
+
+- (NSString *)getFullDocumentPath:(NSString * )filename
+{
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	// returns array of strings of the full paths to the documents directories for each user on the device (for accounts)
+    NSString *docDir = [paths objectAtIndex:0];
+	NSString *fullPath = [docDir stringByAppendingPathComponent:filename];
+	return fullPath;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    NSString *path = [self getFullDocumentPath:@"UserData.plist"];
+    self.UD = [[UserData alloc] init];
+    if([[NSFileManager defaultManager] fileExistsAtPath:path])
+    {
+        NSMutableArray * a = [[NSMutableArray alloc] initWithContentsOfFile:path];
+        self.UD.points = [[a objectAtIndex:0] integerValue];
+    }
+    else
+        self.UD.points = 0;
 }
 
 - (void)didReceiveMemoryWarning
@@ -30,7 +48,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSLog(@"Prepping for segue...");
+    self.VCM = [segue destinationViewController];
+    self.VCM.UD = self.UD;
 }
 
 @end

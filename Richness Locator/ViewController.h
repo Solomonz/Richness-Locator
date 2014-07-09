@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
-
-//#import "ViewControllerMoneyed.h"
+#import "ViewControllerM.h"
+#import "UserData.h"
 
 @interface ViewController : UIViewController
 
-//@property (strong, nonatomic) ViewControllerMoneyed * vcm;
+@property (strong, nonatomic) UserData * UD;
+@property (strong, nonatomic) ViewControllerM * VCM;
 
 @end
