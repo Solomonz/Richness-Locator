@@ -13,6 +13,7 @@
 
 @interface GenerationHelper : NSObject
 
-- (CLLocation *) GeneratethRichness:(CLLocation *) userlocation atRadius:(double) desiredRadius;
+- (CLLocation *) GeneratethRichness:(CLLocation *) userlocation atRadius:(double) desiredRadius exact:(BOOL) e;
+- (CLLocation *) GeneratethRichnessHelper:(CLLocation *) userlocation atRadius:(double) desiredRadius;
 
 @end

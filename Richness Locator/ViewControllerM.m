@@ -38,6 +38,7 @@
     //    [self.map.showsUserLocation YES];
     map.showsUserLocation = YES;
     map.delegate = self;
+    self.GH = [[GenerationHelper alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -133,12 +134,7 @@
     
     CLLocation *origin = [[CLLocation alloc] initWithLatitude:usersLocation.latitude longitude:usersLocation.longitude];
     
-    self.GH = [[GenerationHelper alloc] init];
-    
-    if(self.GH)
-        NSLog(@"hello");
-    
-    self.Destinationeth = [self.GH GeneratethRichness:origin atRadius:200];
+    self.Destinationeth = [self.GH GeneratethRichness:origin atRadius:200 exact:YES];
     
     alreadyGotDestination = YES;
     
