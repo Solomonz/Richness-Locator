@@ -14,5 +14,7 @@
 @interface GenerationHelper : NSObject
 
 - (CLLocation *) GeneratethRichness:(CLLocation *) userlocation atRadius:(double) maxRadius exact:(BOOL) e;
+- (double) dLat:(CLLocation *) userlocation vertDistance:(double) dist;
+- (double) dLon:(CLLocation *) userlocation horizDistance:(double) dist;
 
 @end

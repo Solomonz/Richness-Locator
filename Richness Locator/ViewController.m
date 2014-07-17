@@ -30,14 +30,14 @@
     [super viewDidLoad];
     
     NSString *path = [self getFullDocumentPath:@"UserData.plist"];
-    self.UD = [[UserData alloc] init];
+    UD = [[UserData alloc] init];
     if([[NSFileManager defaultManager] fileExistsAtPath:path])
     {
         NSMutableArray * a = [[NSMutableArray alloc] initWithContentsOfFile:path];
-        self.UD.points = [[a objectAtIndex:0] integerValue];
+        UD.points = [[a objectAtIndex:0] integerValue];
     }
     else
-        self.UD.points = 0;
+        UD.points = 0;
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,8 +48,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    self.VCM = [segue destinationViewController];
-    self.VCM.UD = self.UD;
+    VCM = [segue destinationViewController];
+    VCM.UD = UD;
 }
 
 @end

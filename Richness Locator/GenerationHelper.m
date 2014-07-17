@@ -14,21 +14,7 @@
 - (CLLocation *) GeneratethRichness:(CLLocation *) userlocation atRadius:(double) desiredRadius exact:(BOOL) e
 {
     CLLocation * out = [userlocation copy];
-    double dLon = 0, dLat = 0;
-    
-    while([out distanceFromLocation:userlocation] < desiredRadius)
-    {
-        out = [[CLLocation alloc] initWithLatitude:out.coordinate.latitude longitude:out.coordinate.longitude + 0.000005];
-        dLon += 0.000005;
-    }
-    
-    out = [userlocation copy];
-    
-    while([out distanceFromLocation:userlocation] < desiredRadius)
-    {
-        out = [[CLLocation alloc] initWithLatitude:out.coordinate.latitude + 0.000005 longitude:out.coordinate.longitude];
-        dLat += 0.000005;
-    }
+    double dLon = [self dLon:userlocation horizDistance:desiredRadius], dLat = [self dLat:userlocation vertDistance:desiredRadius];
     
     double latitudeInMeters = ((double) arc4random_uniform(2 * desiredRadius)) - desiredRadius, latitude = latitudeInMeters * dLat / desiredRadius;
     double longitudeInMeters = sqrt(pow(desiredRadius, 2) - pow(latitudeInMeters, 2));
@@ -39,7 +25,33 @@
     double longitude = longitudeInMeters * dLon / desiredRadius;
     
     out = [[CLLocation alloc] initWithLatitude:userlocation.coordinate.latitude + latitude longitude:userlocation.coordinate.longitude + longitude];
-   return out;
+    //if(e && (abs([out distanceFromLocation:userlocation] - desiredRadius) >= 0.1))
+        //return [self GeneratethRichness:userlocation atRadius:desiredRadius exact:YES];
+    return out;
+}
+
+- (double) dLat:(CLLocation *)userlocation vertDistance:(double)dist
+{
+    CLLocation * c = [userlocation copy];
+    double out = 0;
+    while([c distanceFromLocation:userlocation] < dist)
+    {
+        c = [[CLLocation alloc] initWithLatitude:c.coordinate.latitude + 0.000001 longitude:c.coordinate.longitude];
+        out += 0.000001;
+    }
+    return out;
+}
+
+- (double) dLon:(CLLocation *)userlocation horizDistance:(double)dist
+{
+    CLLocation * c = [userlocation copy];
+    double out = 0;
+    while([c distanceFromLocation:userlocation] < dist)
+    {
+        c = [[CLLocation alloc] initWithLatitude:c.coordinate.latitude longitude:c.coordinate.longitude + 0.000001];
+        out += 0.000001;
+    }
+    return out;
 }
 
 @end

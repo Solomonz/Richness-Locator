@@ -115,6 +115,29 @@
                                     <action selector="Revealeth:" destination="GXq-Ea-tQ9" eventType="touchUpInside" id="CGD-Nb-mKc"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Btt-uY-rtF">
+                                <rect key="frame" x="227" y="189" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="followSwitch:" destination="GXq-Ea-tQ9" eventType="valueChanged" id="EKW-XJ-CVQ"/>
+                                    <action selector="toSeeOrNotToSee:" destination="GXq-Ea-tQ9" eventType="valueChanged" id="ytE-eC-abI"/>
+                                    <action selector="toSeeOrNotToSee:forEvent:" destination="GXq-Ea-tQ9" eventType="valueChanged" id="dFX-lT-dl7"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAT-Id-P5T">
+                                <rect key="frame" x="234" y="221" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Follow">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="13" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -127,7 +150,10 @@
                     <connections>
                         <outlet property="Generateth" destination="5ch-rE-RgR" id="g5k-3D-8Fo"/>
                         <outlet property="Informationeth" destination="Ox1-HZ-UcJ" id="ezb-tQ-XIi"/>
+                        <outlet property="Revealeth" destination="fUj-wk-bLB" id="ttJ-2i-jX9"/>
+                        <outlet property="followLabel" destination="qAT-Id-P5T" id="LDT-dY-maf"/>
                         <outlet property="map" destination="CaS-zd-OWl" id="Wri-2a-8dG"/>
+                        <outlet property="toSeeOrNotToSee" destination="Btt-uY-rtF" id="smV-C7-b2y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RD2-eL-VSv" userLabel="First Responder" sceneMemberID="firstResponder"/>

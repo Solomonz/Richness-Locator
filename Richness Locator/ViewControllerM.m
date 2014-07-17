@@ -14,7 +14,7 @@
 
 @implementation ViewControllerM
 
-@synthesize map, locationManager, alreadyGotUserLocation, alreadyGotDestination, Generateth, Informationeth, usersLocation, prevDist, Destinationeth, GH, UD, time, distance, timer, outOfTime;
+@synthesize map, locationManager, alreadyGotUserLocation, alreadyGotDestination, Generateth, Informationeth, usersLocation, prevDist, Destinationeth, GH, UD, time, distance, timer, outOfTime, Revealeth, followLabel, follow;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,7 +35,11 @@
     [self startStandardUpdates];
     map.showsUserLocation = YES;
     map.delegate = self;
-    self.GH = [[GenerationHelper alloc] init];
+    GH = [[GenerationHelper alloc] init];
+    Revealeth.hidden = YES;
+    distance = 200;
+    time = distance * 1.25;
+    follow = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,7 +58,7 @@
     }
     
     locationManager.delegate = self;
-    locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
     // Set a movement threshold for new events.
     // locationManager.distanceFilter = 500; // meters
@@ -66,26 +70,24 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    // If it's a relatively recent event, turn off updates to save power.
-    
-    CLLocation* location = [locations lastObject];
+    CLLocation * location = [locations lastObject];
     usersLocation.latitude = location.coordinate.latitude;
     usersLocation.longitude = location.coordinate.longitude;
     
     if(alreadyGotDestination)
     {
-        double newDist = ((double) ((int) ([[[CLLocation alloc] initWithLatitude:usersLocation.latitude longitude:usersLocation.longitude] distanceFromLocation:Destinationeth] * 2))) / 2;
+        double newDist = ((double) ((int) ([location distanceFromLocation:Destinationeth] * 2))) / 2;
         
-        if(abs(newDist - prevDist) < 1)
+        if(newDist == prevDist/*abs(newDist - prevDist) < 0.5*/)
             return;
         
-        if(newDist <= 5)
+        if(newDist <= sqrt(distance / 4))
         {
             [self ReachedDestination:Informationeth.text.doubleValue];
             alreadyGotDestination = NO;
             return;
         }
-        NSString *distanceString = [[NSString alloc] initWithFormat:@"%d", (int) newDist];
+        NSString *distanceString = [[NSString alloc] initWithFormat:@"%.1f", newDist];
         
         prevDist = newDist;
         
@@ -94,15 +96,14 @@
     
     if (!alreadyGotUserLocation && !(map.userLocation.location.coordinate.latitude == 0 && map.userLocation.location.coordinate.longitude == 0))
     {
-        
         MKCoordinateRegion areaToZoom;
         areaToZoom.center = map.userLocation.location.coordinate;
         MKCoordinateSpan areaToSpan;
-        areaToSpan.latitudeDelta = 0.005;
-        areaToSpan.longitudeDelta = 0.005;
+        areaToSpan.latitudeDelta = 2.1 * [GH dLat:location vertDistance:distance];
+        areaToSpan.longitudeDelta = 2.1 * [GH dLon:location horizDistance:distance];
         areaToZoom.span = areaToSpan;
         
-        self.usersLocation = areaToZoom.center;
+        usersLocation = areaToZoom.center;
         
         [map setRegion:areaToZoom animated:YES];
         alreadyGotUserLocation = YES;
@@ -127,53 +128,63 @@
 
 - (IBAction)Generateth:(id)sender
 {
-    self.distance = 10;
-    [Informationeth setText: [[NSString alloc] initWithFormat:@"Thou hast %d seconds to find thy treasure!", self.distance]];
+    time = distance * 1.25;
+    [Revealeth setTitle:[[NSString alloc] initWithFormat:@"%ld", UD.points] forState:UIControlStateNormal];
+    [Informationeth setText: [[NSString alloc] initWithFormat:@"Thou hast %d seconds to find thy treasure!", (int) time]];
     
     CLLocation *origin = [[CLLocation alloc] initWithLatitude:usersLocation.latitude longitude:usersLocation.longitude];
     
-    self.Destinationeth = [self.GH GeneratethRichness:origin atRadius:self.distance exact:YES];
+    Destinationeth = [GH GeneratethRichness:origin atRadius:distance exact:YES];
     
     alreadyGotDestination = YES;
     
-    self.prevDist = ((double) ((int) ([self.Destinationeth distanceFromLocation:origin] * 2))) / 2;
-    [self.map removeAnnotations:self.map.annotations];
+    prevDist = ((double) ((int) ([Destinationeth distanceFromLocation:origin] * 2))) / 2;
+    [map removeAnnotations:map.annotations];
     
-    NSString *distanceString = [[NSString alloc] initWithFormat:@"%d", (int) prevDist];
+    NSString *distanceString = [[NSString alloc] initWithFormat:@"%.1f", prevDist];
     [Generateth setTitle:distanceString forState:UIControlStateNormal];
-//    [self ReachedDestination:10];
-    
-    self.time = self.distance;
-    self.outOfTime = NO;
-    [self.timer invalidate];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateTimer:) userInfo:nil repeats:YES];
+    //[self ReachedDestination:0];
+    [self Revealeth:nil];
+    outOfTime = NO;
+    [timer invalidate];
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateTimer:) userInfo:nil repeats:YES];
+    Revealeth.hidden = NO;
 }
 
 - (IBAction)Revealeth:(id)sender
 {
-    if(self.map.annotations.count == 2)
+    if(map.annotations.count == 2)
     {
-        [self.map removeAnnotations:self.map.annotations];
+        [map removeAnnotations:map.annotations];
         return;
     }
     MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
     point.coordinate = Destinationeth.coordinate;
     point.title = @"THY TREASURE";
     point.subtitle = @"LIËTH HERETH";
-    [self.map addAnnotation:point];
+    [map addAnnotation:point];
 }
 
 - (void) ReachedDestination:(double)timeLeft
 {
-    [self Revealeth:NULL];
-    self.UD.points += timeLeft;
+    [timer invalidate];
+    [map removeAnnotations:map.annotations];
+    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+    point.coordinate = Destinationeth.coordinate;
+    point.title = @"THY TREASURE";
+    point.subtitle = @"ITH THINE";
+    [map addAnnotation:point];
+    UD.points += timeLeft;
     NSString * path = [self getFullDocumentPath:@"UserData.plist"];
-    NSMutableArray * a = [[NSMutableArray alloc] initWithObjects:[[NSNumber alloc] initWithLong:0], nil];
+    NSMutableArray * a = [[NSMutableArray alloc] initWithObjects:[[NSNumber alloc] initWithLong:0/*UD.points*/], nil];
     [a writeToFile:path atomically:NO];
-    NSLog(@"%ld", self.UD.points);
+    NSLog(@"%ld", UD.points);
 }
 
-- (NSString *)getFullDocumentPath:(NSString * )filename
+- (IBAction)toSeeOrNotToSee:(UISwitch *)sender forEvent:(UIEvent *)event {
+}
+
+- (NSString *)getFullDocumentPath:(NSString *)filename
 {
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	// returns array of strings of the full paths to the documents directories for each user on the device (for accounts)
@@ -184,24 +195,38 @@
 
 - (void) DidntQuiteMakeIt
 {
-    NSLog(@"hello");
+    NSLog(@"you didn't quite make it");
+    [map removeAnnotations:map.annotations];
+    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+    point.coordinate = Destinationeth.coordinate;
+    point.title = @"Thou couldst have been moneyful!";
+    point.subtitle = @"But thou werest too slothful";
+    [map addAnnotation:point];
 }
 
 - (void) updateTimer:(NSTimer *) t
 {
-    self.time -= 0.1;
-    if(self.time < 0.1 || self.outOfTime)
+    if(time < 0.1 || outOfTime)
     {
-        [self.timer invalidate];
-        if(!self.outOfTime)
+        [timer invalidate];
+        if(!outOfTime)
             [self DidntQuiteMakeIt];
-        self.outOfTime = YES;
+        outOfTime = YES;
         [Informationeth setText: @"Thou hath run out of time"];
-        self.timer = nil;
+        timer = nil;
         return;
     }
-    if(self.distance - 1.5 >= self.time)
-        [Informationeth setText: [[NSString alloc] initWithFormat:@"%.1f", self.time]];
+    time -= 0.1;
+    if(distance * 1.25 - 3 >= time)
+        [Informationeth setText: [[NSString alloc] initWithFormat:@"%.1f", time]];
+}
+
+- (IBAction)followSwitch:(UISwitch *)sender
+{follow = [sender isOn];}
+
+- (void)zoomToUser:(CLLocation *)location
+{
+    
 }
 
 @end
