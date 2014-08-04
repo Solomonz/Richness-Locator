@@ -48,6 +48,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if(segue.class != [[ViewControllerM alloc] init])
+        return;
     VCM = [segue destinationViewController];
     VCM.UD = UD;
 }

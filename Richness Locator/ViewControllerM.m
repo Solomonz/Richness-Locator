@@ -31,7 +31,6 @@
 {
     [super viewDidLoad];
     Generateth.hidden = YES;
-    // Do any additional setup after loading the view.
     [self startStandardUpdates];
     map.showsUserLocation = YES;
     map.delegate = self;
@@ -50,13 +49,8 @@
 
 - (void)startStandardUpdates
 {
-    // Create the location manager if this object does not
-    // already have one.
-    if (!locationManager)
-    {
+    if(!locationManager)
         locationManager = [[CLLocationManager alloc] init];
-    }
-    
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
@@ -71,6 +65,14 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     CLLocation * location = [locations lastObject];
+    
+    if(!(alreadyGotUserLocation || (map.userLocation.location.coordinate.latitude == 0 && map.userLocation.location.coordinate.longitude == 0)) || ([location distanceFromLocation:[[CLLocation alloc] initWithLatitude:usersLocation.latitude longitude:usersLocation.longitude]] > 0.1 && follow))
+    {
+        [self zoomToUser:location];
+        alreadyGotUserLocation = YES;
+        Generateth.hidden = NO;
+    }
+    
     usersLocation.latitude = location.coordinate.latitude;
     usersLocation.longitude = location.coordinate.longitude;
     
@@ -92,22 +94,6 @@
         prevDist = newDist;
         
         [Generateth setTitle:distanceString forState:UIControlStateNormal];
-    }
-    
-    if (!alreadyGotUserLocation && !(map.userLocation.location.coordinate.latitude == 0 && map.userLocation.location.coordinate.longitude == 0))
-    {
-        MKCoordinateRegion areaToZoom;
-        areaToZoom.center = map.userLocation.location.coordinate;
-        MKCoordinateSpan areaToSpan;
-        areaToSpan.latitudeDelta = 2.1 * [GH dLat:location vertDistance:distance];
-        areaToSpan.longitudeDelta = 2.1 * [GH dLon:location horizDistance:distance];
-        areaToZoom.span = areaToSpan;
-        
-        usersLocation = areaToZoom.center;
-        
-        [map setRegion:areaToZoom animated:YES];
-        alreadyGotUserLocation = YES;
-        Generateth.hidden = NO;
     }
     
     //NSDate* eventDate = location.timestamp;
@@ -181,9 +167,6 @@
     NSLog(@"%ld", UD.points);
 }
 
-- (IBAction)toSeeOrNotToSee:(UISwitch *)sender forEvent:(UIEvent *)event {
-}
-
 - (NSString *)getFullDocumentPath:(NSString *)filename
 {
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -226,7 +209,16 @@
 
 - (void)zoomToUser:(CLLocation *)location
 {
+    MKCoordinateRegion areaToZoom;
+    areaToZoom.center = map.userLocation.location.coordinate;
+    MKCoordinateSpan areaToSpan;
+    areaToSpan.latitudeDelta = 2.1 * [GH dLat:location vertDistance:distance];
+    areaToSpan.longitudeDelta = 2.1 * [GH dLon:location horizDistance:distance];
+    areaToZoom.span = areaToSpan;
     
+    //usersLocation = areaToZoom.center; //What does this line do? I think it's redundant.
+    
+    [map setRegion:areaToZoom animated:YES];
 }
 
 @end
